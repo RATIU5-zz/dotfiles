@@ -89,11 +89,6 @@ _G.packer_plugins = {
     path = "/Users/ratiu5/.local/share/nvim/site/pack/packer/start/SchemaStore.nvim",
     url = "https://github.com/b0o/SchemaStore.nvim"
   },
-  ["alpha-nvim"] = {
-    loaded = true,
-    path = "/Users/ratiu5/.local/share/nvim/site/pack/packer/start/alpha-nvim",
-    url = "https://github.com/goolord/alpha-nvim"
-  },
   ["auto-session"] = {
     loaded = true,
     path = "/Users/ratiu5/.local/share/nvim/site/pack/packer/start/auto-session",
@@ -194,13 +189,6 @@ _G.packer_plugins = {
     path = "/Users/ratiu5/.local/share/nvim/site/pack/packer/start/lualine.nvim",
     url = "https://github.com/nvim-lualine/lualine.nvim"
   },
-  ["markdown-preview.nvim"] = {
-    loaded = false,
-    needs_bufread = false,
-    only_cond = false,
-    path = "/Users/ratiu5/.local/share/nvim/site/pack/packer/opt/markdown-preview.nvim",
-    url = "https://github.com/iamcco/markdown-preview.nvim"
-  },
   ["nlsp-settings.nvim"] = {
     loaded = true,
     path = "/Users/ratiu5/.local/share/nvim/site/pack/packer/start/nlsp-settings.nvim",
@@ -296,6 +284,11 @@ _G.packer_plugins = {
     path = "/Users/ratiu5/.local/share/nvim/site/pack/packer/start/project.nvim",
     url = "https://github.com/ahmedkhalf/project.nvim"
   },
+  ["rust.vim"] = {
+    loaded = true,
+    path = "/Users/ratiu5/.local/share/nvim/site/pack/packer/start/rust.vim",
+    url = "https://github.com/rust-lang/rust.vim"
+  },
   ["symbols-outline.nvim"] = {
     loaded = true,
     path = "/Users/ratiu5/.local/share/nvim/site/pack/packer/start/symbols-outline.nvim",
@@ -337,6 +330,16 @@ _G.packer_plugins = {
     path = "/Users/ratiu5/.local/share/nvim/site/pack/packer/start/vim-illuminate",
     url = "https://github.com/RRethy/vim-illuminate"
   },
+  ["vim-jsx-pretty"] = {
+    loaded = true,
+    path = "/Users/ratiu5/.local/share/nvim/site/pack/packer/start/vim-jsx-pretty",
+    url = "https://github.com/MaxMEllon/vim-jsx-pretty"
+  },
+  ["vim-tmux-navigator"] = {
+    loaded = true,
+    path = "/Users/ratiu5/.local/share/nvim/site/pack/packer/start/vim-tmux-navigator",
+    url = "https://github.com/christoomey/vim-tmux-navigator"
+  },
   ["which-key.nvim"] = {
     loaded = true,
     path = "/Users/ratiu5/.local/share/nvim/site/pack/packer/start/which-key.nvim",
@@ -345,13 +348,6 @@ _G.packer_plugins = {
 }
 
 time([[Defining packer_plugins]], false)
-vim.cmd [[augroup packer_load_aucmds]]
-vim.cmd [[au!]]
-  -- Filetype lazy-loads
-time([[Defining lazy-load filetype autocommands]], true)
-vim.cmd [[au FileType markdown ++once lua require("packer.load")({'markdown-preview.nvim'}, { ft = "markdown" }, _G.packer_plugins)]]
-time([[Defining lazy-load filetype autocommands]], false)
-vim.cmd("augroup END")
 if should_profile then save_profiles() end
 
 end)

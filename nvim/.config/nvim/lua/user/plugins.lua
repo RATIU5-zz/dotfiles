@@ -65,6 +65,9 @@ return packer.startup(function(use)
   use "nacro90/numb.nvim" -- scroll window to current line from :n
   use "NvChad/nvim-colorizer.lua" -- highlight color codes
   use "rmagatti/auto-session" -- save session when opening neovim again
+  use "rust-lang/rust.vim"
+  use "MaxMEllon/vim-jsx-pretty"
+  use "christoomey/vim-tmux-navigator"
 
   -- UI
   use "stevearc/dressing.nvim"

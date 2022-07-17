@@ -64,7 +64,7 @@ keymap("o", "L", "$", opts)
 
 -- Insert --
 -- Press jk fast to enter
--- keymap("i", "jk", "<ESC>", opts)
+keymap("i", "jk", "<ESC>", opts)
 
 -- Visual --
 -- Stay in indent mode
@@ -72,8 +72,10 @@ keymap("v", "<", "<gv", opts)
 keymap("v", ">", ">gv", opts)
 
 -- Move text up and down
--- keymap("v", "<A-j>", ":m .+1<CR>==", opts)
--- keymap("v", "<A-k>", ":m .-2<CR>==", opts)
+keymap("v", "˚", ":m .-2<CR>==", opts)
+keymap("n", "˚", ":m .-2<CR>==", opts)
+keymap("v", "∆", ":m .+1<CR>==", opts)
+keymap("n", "∆", ":m .+1<CR>==", opts)
 keymap("v", "p", '"_dP', opts)
 
 -- Visual Block --
@@ -95,7 +97,7 @@ keymap("n", "<esc><esc>", "<cmd>nohlsearch<cr>", opts)
 -- NOTE: the fact that tab and ctrl-i are the same is stupid
 -- keymap("n", "<TAB>", "<cmd>lua vim.lsp.buf.signature_help()<CR>", opts)
 keymap("n", "Q", "<cmd>Bdelete!<CR>", opts)
-keymap("n", "<F1>", ":e ~/Notes/<cr>", opts)
+
 keymap("n", "<F3>", ":e .<cr>", opts)
 keymap("n", "<F4>", "<cmd>Telescope resume<cr>", opts)
 keymap("n", "<F5>", "<cmd>Telescope commands<CR>", opts)
