@@ -2,6 +2,11 @@ PATH="/usr/local/bin:$PATH"
 
 eval "$(starship init zsh)"
 
+source $(brew --prefix nvm)/nvm.sh
+source $(brew --prefix nvm)/etc/bash_completion.d/nvm
+export NVM_DIR="$HOME/.nvm"
+
+
 # bun completions
 [ -s "/Users/ratiu5/.bun/_bun" ] && source "/Users/ratiu5/.bun/_bun"
 
