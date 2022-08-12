@@ -37,6 +37,23 @@ alias gp="git push"
 alias gpu="git pull"
 alias gck="git checkout"
 
+alias config='nvim ~/.zshrc'
+alias home='cd ~'
+alias ...='cd .. && cd ..'
+alias ..='cd ..'
+alias vm=nvim
+alias vim=nvim
+alias python=python3
+alias py=python3
+alias pip=pip3
+
+
+mkcd() {
+  mkdir "$1"
+  cd "$1"
+}
+
+
 # rust env
 #source $HOME/.cargo/env
 
