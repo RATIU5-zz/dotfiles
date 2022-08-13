@@ -3,6 +3,10 @@
 
 ## SHELL ####################################################
 
+# move annoying .zcompdump files into a better hidden directory
+autoload -Uz compinit
+compinit -d ~/.config/zsh/cache/.zcompdump-$HOST
+
 # initialize starship for zsh
 eval "$(starship init zsh)"
 
@@ -48,9 +52,6 @@ mkcd() {
 
 ## PRETTY ME ####################################################
 
-# move annoying .zcompdump files into a better hidden directory
-autoload -Uz compinit
-compinit -d ~/.config/zsh/.zcompdump
 
 # Prevent duplicate PATH variables
 typeset -U PATH
