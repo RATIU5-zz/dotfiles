@@ -7,6 +7,9 @@
 autoload -Uz compinit
 compinit -d ~/.config/zsh/cache/.zcompdump-$HOST
 
+# source zsh-autosuggestions
+source ~/.config/zsh/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
+
 # initialize starship for zsh
 eval "$(starship init zsh)"
 
