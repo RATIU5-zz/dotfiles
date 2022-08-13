@@ -70,8 +70,15 @@ fi
 [[ $- == *i* ]] && source "/usr/local/opt/fzf/shell/completion.zsh" 2> /dev/null
 
 
-# OLD
+## APP PATHS ####################################################
 
+# bun
+[ -s "/Users/ratiu5/.bun/_bun" ] && source "/Users/ratiu5/.bun/_bun"
+export BUN_INSTALL="$HOME/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"
+
+
+# OLD 
 
 # [ -f ~/.fzf.bash ] && source ~/.fzf.bash
 
