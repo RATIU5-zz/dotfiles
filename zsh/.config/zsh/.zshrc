@@ -32,6 +32,8 @@ alias gck="git checkout"
 # directory
 alias config='nvim ~/.zshrc'
 alias home='cd ~'
+alias dev='cd ~/Development'
+alias dev2='cd /Volumes/Samsung_T5/Developer'
 alias ...='cd .. && cd ..'
 alias ..='cd ..'
 
