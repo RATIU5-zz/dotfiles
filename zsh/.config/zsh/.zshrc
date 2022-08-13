@@ -8,17 +8,15 @@ autoload -Uz compinit
 compinit -d ~/.config/zsh/cache/.zcompdump-$HOST
 
 # source zsh-autosuggestions
-source ~/.config/zsh/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
-
-# initialize starship for zsh
-eval "$(starship init zsh)"
-
+# source ~/.config/zsh/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 
 ## HOMEBREW ####################################################
 
 # add homebrew in path
 eval $(/opt/homebrew/bin/brew shellenv)
 
+# initialize starship for zsh
+eval "$(starship init zsh)"
 
 ## ALIASES ####################################################
 

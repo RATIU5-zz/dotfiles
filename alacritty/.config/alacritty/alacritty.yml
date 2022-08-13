@@ -87,7 +87,7 @@ window:
   dynamic_title: true
 
   # Window class (Linux/BSD only):
-  class:
+  # class:
     # Application instance name
     # instance: Alacritty
     # General application class
@@ -419,7 +419,7 @@ selection:
 
 cursor:
   # Cursor style
-  # style:
+  style:
     # Cursor shape
     #
     # Values for `shape`:

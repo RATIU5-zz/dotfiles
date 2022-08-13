@@ -1,5 +1,5 @@
 [core]
-	excludesfile = /Users/ratiu5/.gitignore
+	excludesFile = ~/.config/git/.gitignore
 
 [user]
 	name = RATIU5
