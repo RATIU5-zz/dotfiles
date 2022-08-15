@@ -22,6 +22,11 @@ Clone the repo to a desired directory (will be linked to the home directory late
 ```bash
 git clone https://github.com/RATIU5/dotfiles.git
 ```
+then run
+
+```bash
+make
+```
 
 ### WSL2
 
