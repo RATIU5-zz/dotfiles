@@ -33,8 +33,13 @@ If zsh is not the default shell, run
 ```bash
 chsh -s $(which zsh)
 ```
+- If an error occurs saying zsh is an invalid shell, run the following command: 
 
-or resource with
+```bash
+command -v zsh | sudo tee -a /etc/shells
+```
+
+Optional: Re-source with
 
 ```bash
 source ~/.config/zsh/.zshrc
