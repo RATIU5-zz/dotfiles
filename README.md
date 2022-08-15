@@ -2,7 +2,7 @@
 
 ## Prerequisites
 
-Ensure the following are already installed on your system:
+Ensure the following are installed on your system:
 
 - [Homebrew](https://brew.sh/)/[Linuxbrew](https://docs.brew.sh/Homebrew-on-Linux)
   - [GNU Make](https://formulae.brew.sh/formula/make#default)
@@ -13,6 +13,7 @@ Ensure the following are already installed on your system:
   - [ZSH](https://formulae.brew.sh/formula/zsh#default)
   - [Neovim](https://formulae.brew.sh/formula/neovim)
   - `brew install make starship stow git gh zsh neovim`
+- [NvChad](https://nvchad.github.io/)
 - [ZSH Autosuggestions](https://github.com/zsh-users/zsh-autosuggestions) (optional)
 
 ## Installation
