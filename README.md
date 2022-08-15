@@ -28,6 +28,12 @@ then run
 make
 ```
 
+
+### WSL2
+
+- Move `alacritty/.config/alacritty/alacritty.yml` to `C:/Users/username/alacritty.yml`
+  - Adjust alacritty settings according to preferences
+  
 If zsh is not the default shell, run
 
 ```bash
@@ -45,10 +51,6 @@ Optional: Re-source with
 source ~/.config/zsh/.zshrc
 ```
 
-### WSL2
-
-- Move `alacritty/.config/alacritty/alacritty.yml` to `C:/Users/username/alacritty.yml`
-  - Adjust alacritty settings according to preferences
   
 ## Uninatall
 
