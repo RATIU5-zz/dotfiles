@@ -12,8 +12,14 @@ compinit -d ~/.config/zsh/cache/.zcompdump-$HOST
 
 ## HOMEBREW ####################################################
 
-# add homebrew in path
-eval $(/opt/homebrew/bin/brew shellenv)
+if [[ `uname` == "Darwin" ]]; then
+  # if macos, add macos homebrew path
+  eval $(/opt/homebrew/bin/brew shellenv)
+else
+  # if linux, add different path
+  export BREW_HOME="/home/linuxbrew/.linuxbrew/bin"
+  export PATH="$PATH:$BREW_HOME"
+fi
 
 # initialize starship for zsh
 eval "$(starship init zsh)"
