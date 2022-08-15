@@ -28,6 +28,18 @@ then run
 make
 ```
 
+If zsh is not the default shell, run
+
+```bash
+chsh -s $(which zsh)
+```
+
+or resource with
+
+```bash
+source ~/.config/zsh/.zshrc
+```
+
 ### WSL2
 
 - Move `alacritty/.config/alacritty/alacritty.yml` to `C:/Users/username/alacritty.yml`
