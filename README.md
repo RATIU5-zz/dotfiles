@@ -11,6 +11,7 @@ Ensure the following are already installed on your system:
   - [Git](https://formulae.brew.sh/formula/git#default)
   - [GitHUb CLI](https://formulae.brew.sh/formula/gh#default)
   - [ZSH](https://formulae.brew.sh/formula/zsh#default)
+  - `brew install make starship stow git gh zsh`
 - [ZSH Autosuggestions](https://github.com/zsh-users/zsh-autosuggestions) (optional)
 
 ## Installation
