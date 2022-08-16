@@ -29,10 +29,11 @@ eval "$(starship init zsh)"
 # git
 alias gap="git add -p"
 alias gaa="git add *"
+alias gst="git status"
 alias gcm="git commit -m"
-alias gp="git push"
+alias gps="git push"
 alias gpo="git push origin"
-alias gpu="git pull"
+alias gpl="git pull"
 alias gck="git checkout"
 
 # directory
