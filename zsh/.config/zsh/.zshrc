@@ -88,8 +88,9 @@ fi
 export BUN_INSTALL="$HOME/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
 
+export NVM_DIR="/Users/ratiu5/.nvm"
 
-# OLD 
+# OLD
 
 # [ -f ~/.fzf.bash ] && source ~/.fzf.bash
 
@@ -117,4 +118,4 @@ export PATH="$BUN_INSTALL/bin:$PATH"
 
 # rust env
 #source $HOME/.cargo/env
-
+source /opt/homebrew/opt/nvm/nvm.sh

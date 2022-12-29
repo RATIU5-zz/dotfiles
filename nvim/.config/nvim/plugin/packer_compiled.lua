@@ -9,23 +9,26 @@ vim.api.nvim_command('packadd packer.nvim')
 
 local no_errors, error_msg = pcall(function()
 
-  local time
-  local profile_info
-  local should_profile = false
-  if should_profile then
-    local hrtime = vim.loop.hrtime
-    profile_info = {}
-    time = function(chunk, start)
-      if start then
-        profile_info[chunk] = hrtime()
-      else
-        profile_info[chunk] = (hrtime() - profile_info[chunk]) / 1e6
-      end
+_G._packer = _G._packer or {}
+_G._packer.inside_compile = true
+
+local time
+local profile_info
+local should_profile = false
+if should_profile then
+  local hrtime = vim.loop.hrtime
+  profile_info = {}
+  time = function(chunk, start)
+    if start then
+      profile_info[chunk] = hrtime()
+    else
+      profile_info[chunk] = (hrtime() - profile_info[chunk]) / 1e6
     end
-  else
-    time = function(chunk, start) end
   end
-  
+else
+  time = function(chunk, start) end
+end
+
 local function save_profiles(threshold)
   local sorted_times = {}
   for chunk_name, time_taken in pairs(profile_info) do
@@ -38,8 +41,10 @@ local function save_profiles(threshold)
       results[i] = elem[1] .. ' took ' .. elem[2] .. 'ms'
     end
   end
+  if threshold then
+    table.insert(results, '(Only showing plugins that took longer than ' .. threshold .. ' ms ' .. 'to load)')
+  end
 
-  _G._packer = _G._packer or {}
   _G._packer.profile_output = results
 end
 
@@ -109,6 +114,11 @@ _G.packer_plugins = {
     path = "/Users/ratiu5/.local/share/nvim/site/pack/packer/start/hop.nvim",
     url = "https://github.com/phaazon/hop.nvim"
   },
+  ["lsp-format.nvim"] = {
+    loaded = true,
+    path = "/Users/ratiu5/.local/share/nvim/site/pack/packer/start/lsp-format.nvim",
+    url = "https://github.com/lukas-reineke/lsp-format.nvim"
+  },
   ["lualine.nvim"] = {
     loaded = true,
     path = "/Users/ratiu5/.local/share/nvim/site/pack/packer/start/lualine.nvim",
@@ -174,6 +184,11 @@ _G.packer_plugins = {
     path = "/Users/ratiu5/.local/share/nvim/site/pack/packer/start/telescope.nvim",
     url = "https://github.com/nvim-telescope/telescope.nvim"
   },
+  ["tokyonight.nvim"] = {
+    loaded = true,
+    path = "/Users/ratiu5/.local/share/nvim/site/pack/packer/start/tokyonight.nvim",
+    url = "https://github.com/folke/tokyonight.nvim"
+  },
   ["vim-commentary"] = {
     loaded = true,
     path = "/Users/ratiu5/.local/share/nvim/site/pack/packer/start/vim-commentary",
@@ -195,7 +210,7 @@ _G.packer_plugins = {
     url = "https://github.com/christoomey/vim-tmux-navigator"
   },
   ["which-key.nvim"] = {
-    config = { "\27LJ\2\n√\1\0\0\4\0\b\0\v6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\4\0005\3\3\0=\3\5\0025\3\6\0=\3\a\2B\0\2\1K\0\1\0\19popup_mappings\1\0\2\14scroll_up\n<c-k>\16scroll_down\n<c-j>\15key_labels\1\0\0\1\0\5\n<tab>\bTAB\n<esc>\bESC\t<cr>\bRET\t<bs>\tBKSP\f<space>\bSPC\nsetup\14which-key\frequire\0" },
+    config = { "\27LJ\2\n√\1\0\0\4\0\b\0\v6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\4\0005\3\3\0=\3\5\0025\3\6\0=\3\a\2B\0\2\1K\0\1\0\19popup_mappings\1\0\2\16scroll_down\n<c-j>\14scroll_up\n<c-k>\15key_labels\1\0\0\1\0\5\n<esc>\bESC\f<space>\bSPC\t<bs>\tBKSP\n<TAB>\bTAB\t<cr>\bRET\nsetup\14which-key\frequire\0" },
     loaded = true,
     path = "/Users/ratiu5/.local/share/nvim/site/pack/packer/start/which-key.nvim",
     url = "https://github.com/folke/which-key.nvim"
@@ -205,8 +220,15 @@ _G.packer_plugins = {
 time([[Defining packer_plugins]], false)
 -- Config for: which-key.nvim
 time([[Config for which-key.nvim]], true)
-try_loadstring("\27LJ\2\n√\1\0\0\4\0\b\0\v6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\4\0005\3\3\0=\3\5\0025\3\6\0=\3\a\2B\0\2\1K\0\1\0\19popup_mappings\1\0\2\14scroll_up\n<c-k>\16scroll_down\n<c-j>\15key_labels\1\0\0\1\0\5\n<tab>\bTAB\n<esc>\bESC\t<cr>\bRET\t<bs>\tBKSP\f<space>\bSPC\nsetup\14which-key\frequire\0", "config", "which-key.nvim")
+try_loadstring("\27LJ\2\n√\1\0\0\4\0\b\0\v6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\4\0005\3\3\0=\3\5\0025\3\6\0=\3\a\2B\0\2\1K\0\1\0\19popup_mappings\1\0\2\16scroll_down\n<c-j>\14scroll_up\n<c-k>\15key_labels\1\0\0\1\0\5\n<esc>\bESC\f<space>\bSPC\t<bs>\tBKSP\n<TAB>\bTAB\t<cr>\bRET\nsetup\14which-key\frequire\0", "config", "which-key.nvim")
 time([[Config for which-key.nvim]], false)
+
+_G._packer.inside_compile = false
+if _G._packer.needs_bufread == true then
+  vim.cmd("doautocmd BufRead")
+end
+_G._packer.needs_bufread = false
+
 if should_profile then save_profiles() end
 
 end)
